@@ -59,6 +59,5 @@ public abstract class MixinGameRenderer {
 	private void hookRenderWorldLast(float tickDelta, long endTime, CallbackInfo ci, WorldRenderer context) {
 		this.client.getProfiler().swap("forge_render_last");
 		RenderEvents.onRenderLast(context, tickDelta);
-		System.out.println("CALLED onRenderLast");
 	}
 }
