@@ -123,7 +123,7 @@ public class ForgeHooksClient {
 
 	@Stubbed
 	public static void dispatchRenderLast(WorldRenderer context, float partialTicks) {
-		throw new NotImplementedException("ForgeHooksClient stub");
+		RenderEvents.onRenderLast(context, partialTicks);
 	}
 
 	@Stubbed

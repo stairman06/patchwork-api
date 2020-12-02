@@ -23,6 +23,7 @@ import java.util.Set;
 
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
+import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModLoader;
@@ -52,6 +53,10 @@ public class RenderEvents {
 
 	public static void onTextureStitchPost(SpriteAtlasTexture spriteAtlasTexture) {
 		ModLoader.get().postEvent(new TextureStitchEvent.Post(spriteAtlasTexture));
+	}
+
+	public static void onRenderLast(WorldRenderer context, float partialTicks) {
+		MinecraftForge.EVENT_BUS.post(new RenderWorldLastEvent(context, partialTicks));
 	}
 
 	/**
