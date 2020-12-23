@@ -17,7 +17,11 @@
     "MixinStemBlock",
     "MixinSugarCaneBlock",
     "PlantBlockAccessor",
-    "PlantTypeAccessor"
+    "PlantTypeAccessor",
+    "MixinStairsBlock"
+  ],
+  "client": [
+    "MixinStairsBlockClient"
   ],
   "injectors": {
     "defaultRequire": 1
