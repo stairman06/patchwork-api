@@ -23,6 +23,8 @@ import net.minecraftforge.eventbus.api.Event;
 
 import net.minecraft.client.util.Window;
 
+import java.util.ArrayList;
+
 public class RenderGameOverlayEvent extends Event {
 	private final float partialTicks;
 	private final Window window;
@@ -93,7 +95,29 @@ public class RenderGameOverlayEvent extends Event {
 		}
 	}
 
-	// TODO: BossInfo, Text, Chat
+	public static class Text extends Pre
+	{
+		private final ArrayList<String> left;
+		private final ArrayList<String> right;
+		public Text(RenderGameOverlayEvent parent, ArrayList<String> left, ArrayList<String> right)
+		{
+			super(parent, ElementType.TEXT);
+			this.left = left;
+			this.right = right;
+		}
+
+		public ArrayList<String> getLeft()
+		{
+			return left;
+		}
+
+		public ArrayList<String> getRight()
+		{
+			return right;
+		}
+	}
+
+	// TODO: BossInfo, Chat
 
 	@Override
 	public boolean isCancelable() {
